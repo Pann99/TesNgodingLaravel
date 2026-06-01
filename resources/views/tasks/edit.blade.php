@@ -23,7 +23,7 @@
                     </label>
                     <input type="text" name="title" value="{{ old('title', $task->title) }}"
                         placeholder="Minimal 5 karakter"
-                        class="w-full px-4 py-2.5 border @error('title') border-red-400 bg-red-50 @else border-gray-200 @enderror rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition" />
+                        class="w-full px-4 py-2.5 border {{ $errors->has('title') ? 'border-red-400 bg-red-50' : 'border-gray-200' }} rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition" />
                     @error('title')
                         <p class="text-red-500 text-xs mt-1.5">{{ $message }}</p>
                     @enderror
@@ -35,7 +35,7 @@
                     </label>
                     <textarea name="description" rows="4"
                         placeholder="Deskripsi tugas..."
-                        class="w-full px-4 py-2.5 border @error('description') border-red-400 bg-red-50 @else border-gray-200 @enderror rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition resize-none">{{ old('description', $task->description) }}</textarea>
+                        class="w-full px-4 py-2.5 border {{ $errors->has('description') ? 'border-red-400 bg-red-50' : 'border-gray-200' }} rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition resize-none">{{ old('description', $task->description) }}</textarea>
                     @error('description')
                         <p class="text-red-500 text-xs mt-1.5">{{ $message }}</p>
                     @enderror
@@ -46,7 +46,7 @@
                         Tanggal <span class="text-red-500">*</span>
                     </label>
                     <input type="date" name="task_date" value="{{ old('task_date', $task->task_date) }}"
-                        class="w-full px-4 py-2.5 border @error('task_date') border-red-400 bg-red-50 @else border-gray-200 @enderror rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition" />
+                        class="w-full px-4 py-2.5 border {{ $errors->has('task_date') ? 'border-red-400 bg-red-50' : 'border-gray-200' }} rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition" />
                     @error('task_date')
                         <p class="text-red-500 text-xs mt-1.5">{{ $message }}</p>
                     @enderror
@@ -57,7 +57,7 @@
                         Status <span class="text-red-500">*</span>
                     </label>
                     <select name="status"
-                        class="w-full px-4 py-2.5 border @error('status') border-red-400 bg-red-50 @else border-gray-200 @enderror rounded-xl text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition">
+                        class="w-full px-4 py-2.5 border {{ $errors->has('status') ? 'border-red-400 bg-red-50' : 'border-gray-200' }} rounded-xl text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition">
                         <option value="">-- Pilih Status --</option>
                         <option value="Belum dikerjakan" {{ old('status', $task->status) == 'Belum dikerjakan' ? 'selected' : '' }}>Belum dikerjakan</option>
                         <option value="Sedang dikerjakan" {{ old('status', $task->status) == 'Sedang dikerjakan' ? 'selected' : '' }}>Sedang dikerjakan</option>

@@ -95,7 +95,9 @@
                             <a href="{{ route('tasks.edit', $task) }}"
                                 class="text-amber-500 hover:text-amber-700 text-sm font-medium transition">Edit</a>
                             <button type="button"
-                                onclick="openDeleteModal({{ $task->id }}, '{{ addslashes($task->title) }}')"
+                                data-id="{{ $task->id }}"
+                                data-title="{{ $task->title }}"
+                                onclick="openDeleteModalFromDataset(this)"
                                 class="text-red-500 hover:text-red-700 text-sm font-medium transition">
                                 Hapus
                             </button>
@@ -166,6 +168,12 @@
             const modal = document.getElementById('delete-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+        }
+
+        function openDeleteModalFromDataset(el) {
+            const id = el.dataset.id;
+            const title = el.dataset.title;
+            openDeleteModal(id, title);
         }
 
         function closeDeleteModal() {

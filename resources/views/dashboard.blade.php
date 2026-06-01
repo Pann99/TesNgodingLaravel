@@ -26,7 +26,7 @@
 
         <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
             <div class="flex items-center justify-between mb-3">
-                <p class="text-xs font-medium text-gray-400 uppercase tracking-wide">Belum</p>
+                <p class="text-xs font-medium text-gray-400 uppercase tracking-wide">Belum Dikerjakan</p>
                 <div class="w-9 h-9 bg-red-50 rounded-xl flex items-center justify-center">
                     <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -38,7 +38,7 @@
 
         <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
             <div class="flex items-center justify-between mb-3">
-                <p class="text-xs font-medium text-gray-400 uppercase tracking-wide">Sedang</p>
+                <p class="text-xs font-medium text-gray-400 uppercase tracking-wide">Sedang Dikerjakan</p>
                 <div class="w-9 h-9 bg-amber-50 rounded-xl flex items-center justify-center">
                     <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -50,7 +50,7 @@
 
         <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
             <div class="flex items-center justify-between mb-3">
-                <p class="text-xs font-medium text-gray-400 uppercase tracking-wide">Selesai</p>
+                <p class="text-xs font-medium text-gray-400 uppercase tracking-wide">Selesai Dikerjakan</p>
                 <div class="w-9 h-9 bg-green-50 rounded-xl flex items-center justify-center">
                     <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -61,21 +61,6 @@
         </div>
 
     </div>
-
-    <!-- Progress Bar -->
-    @if($total > 0)
-    <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm mb-8">
-        <div class="flex justify-between items-center mb-3">
-            <p class="text-sm font-semibold text-gray-700">Progress Keseluruhan</p>
-            <p class="text-sm font-bold text-green-600">{{ round(($selesai / $total) * 100) }}%</p>
-        </div>
-        <div class="w-full bg-gray-100 rounded-full h-2.5">
-            <div class="bg-green-500 h-2.5 rounded-full transition-all duration-500"
-                style="width: {{ ($selesai / $total) * 100 }}%"></div>
-        </div>
-        <p class="text-xs text-gray-400 mt-2">{{ $selesai }} dari {{ $total }} tugas selesai</p>
-    </div>
-    @endif
 
     <!-- Quick Actions -->
     <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
